@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.houseImage {
+	width: 100px;
+	height: 80px;
+}
+.mainTable {
+	text-align: center;
+}
+
+.buyerTableA {
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	text-align: center;
+	width: 500px;
+}
+
+.buyerTableB {
+	margin-left: 100px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	width: 200px;
+}
