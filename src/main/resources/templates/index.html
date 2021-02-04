@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:tth="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link th:href="@{/css/index.css}" rel="stylesheet">
 </head>
 <body>
-<h1>スタートページ</h1>
-<div>
-	<h1>ログインして下さい</h1>
-	<p class="loginID" th:text="${loginID}"></p>
-</div>
+	<div class="container">
+		<section id="content">
+			<form method="post" action="/login" th:object="${managerAccount}">
+				<h1>ログイン画面</h1>
+				<div>
+					<input type="text" placeholder="Login ID" id="username"
+						name="loginID" th:field="*{loginID}" />
+				</div>
+				<div>
+					<input type="password" placeholder="Password" id="password"
+						name="password" th:field="*{password}" />
+				</div>
+				<div>
+					<input type="submit" value="Log in" />
+				</div>
+			</form>
+		</section>
+	</div>
 
-<div class="container">
-	<section id="content">
-		<form method="POST" action="login.html" th:action="@{login}" th:object="${ManagerAccount}">
-			<h1>ログイン画面</h1>
-			<div>
-				<input type="text" placeholder="Login ID" id="username" name="loginID" th:field="${ManagerAccount.loginID}" />
-			</div>
-			<div>
-				<input type="password" placeholder="Password" id="password" name="password" th:field="${ManagerAccount.password}" />
-			</div>
-			<div>
-				<input type="submit" value="Log in" />
-			</div>
-		</form>
-	</section>
-</div>
 </body>
 </html>
