@@ -2,20 +2,15 @@ package com.example.demo;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import org.springframework.jdbc.core.RowMapper;
 
-public class BuyerMapper implements RowMapper<ArrayList<String>> {
-	public ArrayList<String> mapRow(ResultSet rs, int rowNum) throws SQLException {
-		ArrayList<String> buyerList = new ArrayList<String>();
+public class BuyerMapper implements RowMapper<String> {
 
-		do {
-			buyerList.add(rs.getString("name"));
+	public String mapRow(ResultSet rs, int rowNum) throws SQLException {
 
-		} while (rs.next());
+		String buyerName = rs.getString("name");
 
-		return buyerList;
+		return buyerName;
 	}
-
 }

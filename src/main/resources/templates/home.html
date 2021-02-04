@@ -19,6 +19,7 @@
 			<th>別荘名</th>
 			<th>売却価格</th>
 			<th>写真</th>
+			<th>削除</th>
 		</tr>
 		<tr th:each="obj : ${houseList}">
 			<td th:text="${obj.id}"></td>
@@ -27,6 +28,12 @@
 			<td th:text="${obj.housePrice}"></td>
 			<td>
 				<img class="houseImage" alt="未登録" th:src="@{${obj.houseImage}}">
+			</td>
+			<td>
+				<form method="post" action="/delete">
+					<input type="hidden" name="id" th:value="${obj.id}">
+					<input type="submit" value="削除" />
+				</form>
 			</td>
 		</tr>
 	</table>
@@ -54,6 +61,18 @@
 		</tr>
 		<tr th:each="obj : ${buyerList}">
 			<td th:text="${obj}"></td>
+		</tr>
+		</table>
+	</div>
+	<div class="buyerTableC">
+		<table class="table table-striped table-hover table-sm">
+		<tr>
+			<th>販売者アカウント</th>
+			<th>売却中の別荘ID</th>
+		</tr>
+		<tr th:each="obj : ${sellerList}">
+			<td th:text="${obj.name}"></td>
+			<td th:text="${obj.houseID}"></td>
 		</tr>
 		</table>
 	</div>

@@ -13,13 +13,21 @@
 	position: relative;
 	vertical-align: top;
 	text-align: center;
-	width: 500px;
+	width: 400px;
 }
 
 .buyerTableB {
-	margin-left: 100px;
+	margin-left: 50px;
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
 	width: 200px;
+}
+
+.buyerTableC {
+	margin-left: 50px;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	width: 400px;
 }
